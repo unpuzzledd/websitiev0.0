@@ -123,12 +123,12 @@ const Home = () => {
         </div>
       </header>
 
-      <main className="px-8 py-5">
-        <div className="w-4/5 mx-auto">
+      <main className="px-4 py-5 md:px-8">
+        <div className="w-full mx-auto md:w-4/5">
           {/* Hero Section */}
           <section className="relative mb-12">
             <div 
-              className="h-[512px] rounded-xl flex items-center justify-center text-center text-white relative overflow-hidden"
+              className="h-[300px] md:h-[400px] lg:h-[512px] rounded-xl flex items-center justify-center text-center text-white relative overflow-hidden"
               style={{
                 background: `linear-gradient(90deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.40) 100%), url('${heroImages[currentSlide]}') lightgray 50% / cover no-repeat`
               }}
@@ -152,12 +152,12 @@ const Home = () => {
                 </svg>
               </button>
 
-              <div className="flex flex-col items-center gap-8 w-full max-w-4xl z-10">
+              <div className="flex flex-col items-center gap-4 md:gap-8 w-full max-w-4xl z-10 px-4">
                 <div className="flex flex-col gap-2">
-                  <h2 className="text-5xl font-black leading-[60px] tracking-[-2px] font-lexend">
+                  <h2 className="text-2xl md:text-4xl lg:text-5xl font-black leading-tight md:leading-[60px] tracking-[-1px] md:tracking-[-2px] font-lexend">
                     Unlock Your Potential with<br />Unpuzzle Club
                   </h2>
-                  <p className="text-base font-normal leading-6 font-lexend">
+                  <p className="text-sm md:text-base font-normal leading-5 md:leading-6 font-lexend">
                     Learn from the best, teach what you know, and connect with a global community of learners and instructors.
                   </p>
                 </div>
@@ -195,17 +195,17 @@ const Home = () => {
           </section>
 
           {/* Course Cards */}
-          <section className="mb-12">
+          <section className="mb-8 md:mb-12">
             <div className="flex items-start align-self-stretch">
-              <div className="flex px-4 items-start gap-3">
+              <div className="flex flex-col md:flex-row px-2 md:px-4 items-start gap-4 md:gap-3 w-full">
                 {courses.map((course) => (
-                  <div key={course.id} className="w-full min-w-[240px] flex flex-col items-start gap-4 border-radius-[8px]">
+                  <div key={course.id} className="w-full md:min-w-[240px] flex flex-col items-start gap-3 md:gap-4 border-radius-[8px]">
                     {course.id === 1 ? (
                       <Link to="/chess-classes">
                         <img
                           src={course.image}
                           alt={course.title}
-                          className="h-[135px] align-self-stretch rounded-xl object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                          className="h-[120px] md:h-[135px] align-self-stretch rounded-xl object-cover cursor-pointer hover:opacity-90 transition-opacity w-full"
                         />
                       </Link>
                     ) : course.id === 2 ? (
@@ -213,7 +213,7 @@ const Home = () => {
                         <img
                           src={course.image}
                           alt={course.title}
-                          className="h-[135px] align-self-stretch rounded-xl object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                          className="h-[120px] md:h-[135px] align-self-stretch rounded-xl object-cover cursor-pointer hover:opacity-90 transition-opacity w-full"
                         />
                       </Link>
                     ) : course.id === 3 ? (
@@ -221,7 +221,7 @@ const Home = () => {
                         <img
                           src={course.image}
                           alt={course.title}
-                          className="h-[135px] align-self-stretch rounded-xl object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                          className="h-[120px] md:h-[135px] align-self-stretch rounded-xl object-cover cursor-pointer hover:opacity-90 transition-opacity w-full"
                         />
                       </Link>
                     ) : course.id === 4 ? (
@@ -229,7 +229,7 @@ const Home = () => {
                         <img
                           src={course.image}
                           alt={course.title}
-                          className="h-[135px] align-self-stretch rounded-xl object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                          className="h-[120px] md:h-[135px] align-self-stretch rounded-xl object-cover cursor-pointer hover:opacity-90 transition-opacity w-full"
                         />
                       </Link>
                     ) : (
@@ -243,19 +243,19 @@ const Home = () => {
                       <div className="flex flex-col items-start align-self-stretch">
                         {course.id === 1 ? (
                           <Link to="/chess-classes">
-                            <h4 className="align-self-stretch text-base font-medium text-[#0D1C17] font-lexend leading-6 cursor-pointer hover:text-[#009963] transition-colors">{course.title}</h4>
+                            <h4 className="align-self-stretch text-sm md:text-base font-medium text-[#0D1C17] font-lexend leading-5 md:leading-6 cursor-pointer hover:text-[#009963] transition-colors">{course.title}</h4>
                           </Link>
                         ) : course.id === 2 ? (
                           <Link to="/karate-classes">
-                            <h4 className="align-self-stretch text-base font-medium text-[#0D1C17] font-lexend leading-6 cursor-pointer hover:text-[#009963] transition-colors">{course.title}</h4>
+                            <h4 className="align-self-stretch text-sm md:text-base font-medium text-[#0D1C17] font-lexend leading-5 md:leading-6 cursor-pointer hover:text-[#009963] transition-colors">{course.title}</h4>
                           </Link>
                         ) : course.id === 3 ? (
                           <Link to="/arts-classes">
-                            <h4 className="align-self-stretch text-base font-medium text-[#0D1C17] font-lexend leading-6 cursor-pointer hover:text-[#009963] transition-colors">{course.title}</h4>
+                            <h4 className="align-self-stretch text-sm md:text-base font-medium text-[#0D1C17] font-lexend leading-5 md:leading-6 cursor-pointer hover:text-[#009963] transition-colors">{course.title}</h4>
                           </Link>
                         ) : course.id === 4 ? (
                           <Link to="/dance-music-classes">
-                            <h4 className="align-self-stretch text-base font-medium text-[#0D1C17] font-lexend leading-6 cursor-pointer hover:text-[#009963] transition-colors">{course.title}</h4>
+                            <h4 className="align-self-stretch text-sm md:text-base font-medium text-[#0D1C17] font-lexend leading-5 md:leading-6 cursor-pointer hover:text-[#009963] transition-colors">{course.title}</h4>
                           </Link>
                         ) : (
                           <h4 className="align-self-stretch text-base font-medium text-[#0D1C17] font-lexend leading-6">{course.title}</h4>
@@ -266,28 +266,28 @@ const Home = () => {
                         {course.id === 1 ? (
                           <Link
                             to="/chess-classes"
-                            className="flex px-4 py-2 justify-center items-center align-self-stretch rounded-[10px] bg-[#009963] hover:bg-[#007a4d] transition-colors cursor-pointer"
+                            className="flex px-3 md:px-4 py-2 justify-center items-center align-self-stretch rounded-[10px] bg-[#009963] hover:bg-[#007a4d] transition-colors cursor-pointer min-h-[44px]"
                           >
                             <span className="text-[#F7FCFA] font-lexend text-sm font-normal leading-[21px]">Learn More</span>
                           </Link>
                         ) : course.id === 2 ? (
                           <Link
                             to="/karate-classes"
-                            className="flex px-4 py-2 justify-center items-center align-self-stretch rounded-[10px] bg-[#009963] hover:bg-[#007a4d] transition-colors cursor-pointer"
+                            className="flex px-3 md:px-4 py-2 justify-center items-center align-self-stretch rounded-[10px] bg-[#009963] hover:bg-[#007a4d] transition-colors cursor-pointer min-h-[44px]"
                           >
                             <span className="text-[#F7FCFA] font-lexend text-sm font-normal leading-[21px]">Learn More</span>
                           </Link>
                         ) : course.id === 3 ? (
                           <Link
                             to="/arts-classes"
-                            className="flex px-4 py-2 justify-center items-center align-self-stretch rounded-[10px] bg-[#009963] hover:bg-[#007a4d] transition-colors cursor-pointer"
+                            className="flex px-3 md:px-4 py-2 justify-center items-center align-self-stretch rounded-[10px] bg-[#009963] hover:bg-[#007a4d] transition-colors cursor-pointer min-h-[44px]"
                           >
                             <span className="text-[#F7FCFA] font-lexend text-sm font-normal leading-[21px]">Learn More</span>
                           </Link>
                         ) : course.id === 4 ? (
                           <Link
                             to="/dance-music-classes"
-                            className="flex px-4 py-2 justify-center items-center align-self-stretch rounded-[10px] bg-[#009963] hover:bg-[#007a4d] transition-colors cursor-pointer"
+                            className="flex px-3 md:px-4 py-2 justify-center items-center align-self-stretch rounded-[10px] bg-[#009963] hover:bg-[#007a4d] transition-colors cursor-pointer min-h-[44px]"
                           >
                             <span className="text-[#F7FCFA] font-lexend text-sm font-normal leading-[21px]">Learn More</span>
                           </Link>
@@ -296,7 +296,7 @@ const Home = () => {
                             href="https://wa.me/918660496605"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex px-4 py-2 justify-center items-center align-self-stretch rounded-[10px] bg-[#009963] hover:bg-[#007a4d] transition-colors cursor-pointer"
+                            className="flex px-3 md:px-4 py-2 justify-center items-center align-self-stretch rounded-[10px] bg-[#009963] hover:bg-[#007a4d] transition-colors cursor-pointer min-h-[44px]"
                           >
                             <span className="text-[#F7FCFA] font-lexend text-sm font-normal leading-[21px]">Book a Call</span>
                           </a>
@@ -310,46 +310,46 @@ const Home = () => {
           </section>
 
           {/* Location Covered */}
-          <section className="mb-12">
-            <h3 className="text-[22px] font-bold text-[#0D1C17] mb-4 px-4 font-lexend">Location Covered</h3>
-            <div className="px-4">
+          <section className="mb-8 md:mb-12">
+            <h3 className="text-lg md:text-[22px] font-bold text-[#0D1C17] mb-4 px-2 md:px-4 font-lexend">Location Covered</h3>
+            <div className="px-2 md:px-4">
               <div className="flex justify-between items-start rounded-xl">
-                <div className="w-full max-w-5xl flex flex-col gap-16">
+                <div className="w-full max-w-5xl flex flex-col gap-8 md:gap-16">
                   <div className="flex flex-col gap-1">
-                    <p className="text-sm text-[#888] font-lexend leading-[21px]">
+                    <p className="text-xs md:text-sm text-[#888] font-lexend leading-5 md:leading-[21px]">
                       Sarjapura road, Bangalore<br />
                       KR Puram, Whitefiled, Bangalore<br />
                       Ashok Nagar, Cyber Road, Banglore
                     </p>
                   </div>
-                  <button className="w-fit px-4 py-2 bg-[#E5F5F0] text-[#0D1C17] font-medium text-sm rounded-xl font-lexend">
+                  <button className="w-fit px-3 md:px-4 py-2 bg-[#E5F5F0] text-[#0D1C17] font-medium text-xs md:text-sm rounded-xl font-lexend min-h-[44px]">
                     View All
                   </button>
                 </div>
                 <img 
                   src="https://api.builder.io/api/v1/image/assets/TEMP/c59d2130c583aaf00b8a773b07e8a9e8279ee4c8?width=640"
                   alt="Location map"
-                  className="h-[171px] flex-1 rounded-xl object-cover"
+                  className="h-[120px] md:h-[171px] flex-1 rounded-xl object-cover"
                 />
               </div>
             </div>
           </section>
 
           {/* Student Success Stories */}
-          <section className="mb-12">
-            <h3 className="text-[22px] font-bold text-[#0D1C17] mb-4 px-4 font-lexend">Student Success Stories</h3>
-            <div className="px-4">
-              <div className="grid grid-cols-3 gap-3">
+          <section className="mb-8 md:mb-12">
+            <h3 className="text-lg md:text-[22px] font-bold text-[#0D1C17] mb-4 px-2 md:px-4 font-lexend">Student Success Stories</h3>
+            <div className="px-2 md:px-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-3">
                 {successStories.map((story) => (
                   <div key={story.id} className="flex flex-col gap-4">
                     <img 
                       src={story.image} 
                       alt={story.title}
-                      className="h-[301px] w-full rounded-xl object-cover"
+                      className="h-[200px] md:h-[301px] w-full rounded-xl object-cover"
                     />
                     <div>
-                      <h4 className="text-base font-medium text-[#0D1C17] font-lexend">{story.title}</h4>
-                      <p className="text-sm text-[#45A180] font-lexend">{story.description}</p>
+                      <h4 className="text-sm md:text-base font-medium text-[#0D1C17] font-lexend">{story.title}</h4>
+                      <p className="text-xs md:text-sm text-[#45A180] font-lexend">{story.description}</p>
                     </div>
                   </div>
                 ))}
@@ -361,21 +361,21 @@ const Home = () => {
           <WhyChooseUs />
 
           {/* CTA Section */}
-          <section className="py-11 px-10">
-            <div className="flex flex-col items-center gap-8">
-              <h3 className="text-[36px] font-black text-[#0D1C17] text-center tracking-[-1px] font-lexend">
+          <section className="py-6 md:py-11 px-4 md:px-10">
+            <div className="flex flex-col items-center gap-4 md:gap-8">
+              <h3 className="text-xl md:text-[36px] font-black text-[#0D1C17] text-center tracking-[-1px] font-lexend">
                 Ready to Get Started?
               </h3>
-              <div className="flex gap-3">
+              <div className="flex flex-col md:flex-row gap-3 w-full md:w-auto">
                 <button 
                   onClick={() => setShowTrialForm(true)}
-                  className="px-5 py-3 bg-[#009963] text-[#F7FCFA] font-bold rounded-xl font-lexend hover:bg-[#007a4d] transition-colors"
+                  className="w-full md:w-auto px-4 md:px-5 py-3 bg-[#009963] text-[#F7FCFA] font-bold rounded-xl font-lexend hover:bg-[#007a4d] transition-colors min-h-[44px]"
                 >
                   Book a free trial class
                 </button>
                 <button 
                   onClick={() => setShowInstructorForm(true)}
-                  className="px-5 py-3 bg-[#F0F5F2] text-black font-bold rounded-xl font-lexend hover:bg-[#E5F5F0] transition-colors"
+                  className="w-full md:w-auto px-4 md:px-5 py-3 bg-[#F0F5F2] text-black font-bold rounded-xl font-lexend hover:bg-[#E5F5F0] transition-colors min-h-[44px]"
                 >
                   Become a Instructor
                 </button>
@@ -386,44 +386,44 @@ const Home = () => {
       </main>
 
       {/* Footer */}
-      <footer className="w-4/5 mx-auto">
-        <div className="px-5 py-10 flex flex-col gap-6">
-          <div className="flex justify-between items-center flex-wrap gap-6">
-            <div className="w-40 min-w-[160px] text-center">
+      <footer className="w-full md:w-4/5 mx-auto">
+        <div className="px-4 md:px-5 py-6 md:py-10 flex flex-col gap-4 md:gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-center flex-wrap gap-4 md:gap-6">
+            <div className="w-full md:w-40 min-w-[160px] text-center">
               <button 
                 onClick={() => setShowAboutUs(true)}
-                className="text-base text-[#45A180] font-lexend hover:text-[#009963] transition-colors cursor-pointer"
+                className="text-sm md:text-base text-[#45A180] font-lexend hover:text-[#009963] transition-colors cursor-pointer"
               >
                 About Us
               </button>
             </div>
-            <div className="w-40 min-w-[160px] text-center">
+            <div className="w-full md:w-40 min-w-[160px] text-center">
               <button 
                 onClick={() => setShowContactUs(true)}
-                className="text-base text-[#45A180] font-lexend hover:text-[#009963] transition-colors cursor-pointer"
+                className="text-sm md:text-base text-[#45A180] font-lexend hover:text-[#009963] transition-colors cursor-pointer"
               >
                 Contact Us
               </button>
             </div>
-            <div className="w-40 min-w-[160px] text-center">
+            <div className="w-full md:w-40 min-w-[160px] text-center">
               <button 
                 onClick={() => setShowTermsOfService(true)}
-                className="text-base text-[#45A180] font-lexend hover:text-[#009963] transition-colors cursor-pointer"
+                className="text-sm md:text-base text-[#45A180] font-lexend hover:text-[#009963] transition-colors cursor-pointer"
               >
                 Terms of Service
               </button>
             </div>
-            <div className="w-40 min-w-[160px] text-center">
+            <div className="w-full md:w-40 min-w-[160px] text-center">
               <button 
                 onClick={() => setShowPrivacyPolicy(true)}
-                className="text-base text-[#45A180] font-lexend hover:text-[#009963] transition-colors cursor-pointer"
+                className="text-sm md:text-base text-[#45A180] font-lexend hover:text-[#009963] transition-colors cursor-pointer"
               >
                 Privacy Policy
               </button>
             </div>
           </div>
           
-          <div className="flex justify-center gap-4">
+          <div className="flex justify-center gap-3 md:gap-4">
             {/* Facebook */}
             <a 
               href="https://www.facebook.com/profile.php?id=61578826966343&rdid=Ff2qPytjOZruJsyc&share_url=https://www.facebook.com/share/18qDXjr3ki/" 
