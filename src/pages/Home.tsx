@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { useAuth } from '../hooks/useAuth'
+// Removed unused useAuth import
 import { AboutUs } from '../components/AboutUs'
 import { ContactUs } from '../components/ContactUs'
 import { TermsOfService } from '../components/TermsOfService'
@@ -8,8 +8,7 @@ import { PrivacyPolicy } from '../components/PrivacyPolicy'
 import WhyChooseUs from '../components/WhyChooseUs'
 
 const Home = () => {
-  const [isSignUpLoading, setIsSignUpLoading] = useState(false)
-  const [isSignInLoading, setIsSignInLoading] = useState(false)
+  // Removed unused loading states
   const [showAboutUs, setShowAboutUs] = useState(false)
   const [showContactUs, setShowContactUs] = useState(false)
   const [showTermsOfService, setShowTermsOfService] = useState(false)
@@ -17,7 +16,7 @@ const Home = () => {
   const [showTrialForm, setShowTrialForm] = useState(false)
   const [showInstructorForm, setShowInstructorForm] = useState(false)
   const [currentSlide, setCurrentSlide] = useState(0)
-  const { smartLoginWithGoogle, signUpWithGoogle } = useAuth()
+  // Removed unused auth functions
 
   const heroImages = [
     'https://api.builder.io/api/v1/image/assets/TEMP/bfea38818cfa85e9f7731bacb5edc374b80870b6?width=1856',
@@ -45,23 +44,7 @@ const Home = () => {
     setCurrentSlide(index)
   }
 
-  const handleSmartLogin = async () => {
-    setIsSignInLoading(true)
-    try {
-      await smartLoginWithGoogle()
-    } finally {
-      setIsSignInLoading(false)
-    }
-  }
-
-  const handleSignUp = async () => {
-    setIsSignUpLoading(true)
-    try {
-      await signUpWithGoogle()
-    } finally {
-      setIsSignUpLoading(false)
-    }
-  }
+  // Removed unused handler functions
 
   const activities = ['Chess', 'Karate', 'Art', 'Music/Dance']
   

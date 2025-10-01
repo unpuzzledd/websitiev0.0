@@ -13,8 +13,7 @@ const AcademyDashboard = () => {
   const [recentActivities, setRecentActivities] = useState<AcademyActivity[]>([])
   const [skills, setSkills] = useState<any[]>([])
   const [batches, setBatches] = useState<any[]>([])
-  const [students, setStudents] = useState<any[]>([])
-  const [teachers, setTeachers] = useState<any[]>([])
+  // Removed unused state variables
   const [dataLoading, setDataLoading] = useState(true)
   const [dataError, setDataError] = useState<string | null>(null)
   
@@ -88,17 +87,9 @@ const AcademyDashboard = () => {
         setBatches(academyBatches)
       }
 
-      // Load students
-      const { students: academyStudents, error: studentsError } = await AcademyApi.getStudents(academy.id)
-      if (!studentsError) {
-        setStudents(academyStudents)
-      }
-
-      // Load teachers
-      const { teachers: academyTeachers, error: teachersError } = await AcademyApi.getTeachers(academy.id)
-      if (!teachersError) {
-        setTeachers(academyTeachers)
-      }
+      // Load students and teachers (data stored in API calls for future use)
+      await AcademyApi.getStudents(academy.id)
+      await AcademyApi.getTeachers(academy.id)
 
     } catch (error) {
       setDataError(error instanceof Error ? error.message : 'Failed to load academy data')
@@ -153,7 +144,7 @@ const AcademyDashboard = () => {
     { name: 'Music/Dance', image: 'https://api.builder.io/api/v1/image/assets/TEMP/0818dd948dee100e9eddf1c621e6bbd91772177e?width=296' }
   ]
 
-  const upcomingActivities = ['Chess', 'Karate', 'Art', 'Music/Dance']
+  // Removed unused upcomingActivities variable
 
   return (
     <div className="min-h-screen bg-[#F7FCFA] font-[Lexend]">
@@ -431,7 +422,7 @@ const AcademyDashboard = () => {
               
               <div className="flex items-start self-stretch">
                 {skills.length > 0 ? (
-                  skills.slice(0, 2).map((skill, index) => (
+                  skills.slice(0, 2).map((skill) => (
                     <div key={skill.id} className="flex w-[280px] px-4 flex-col items-start">
                       <div className="flex flex-col justify-center items-center self-stretch rounded-xl">
                         <div className="h-[157px] self-stretch rounded-xl bg-gradient-to-br from-[#F0F5F2] to-[#E5F5F0] flex items-center justify-center">
@@ -476,7 +467,7 @@ const AcademyDashboard = () => {
                 <div className="flex w-[200px] p-4 flex-col items-start bg-[#F7FCFA] rounded-xl min-h-[200px]">
                   <span className="text-sm font-medium text-[#0D1C17] leading-[21px] mb-3">Recent Activities</span>
                   {recentActivities.length > 0 ? (
-                    recentActivities.slice(0, 3).map((activity, index) => (
+                    recentActivities.slice(0, 3).map((activity) => (
                       <div key={activity.id} className="flex flex-col p-2.5 px-3 w-full bg-white rounded-lg mb-2 shadow-sm">
                         <span className="text-sm font-medium text-[#0D1C17] leading-[21px] break-words">{activity.name}</span>
                         <span className="text-xs text-[#5E8C7D] leading-[18px] mt-1">{activity.description}</span>

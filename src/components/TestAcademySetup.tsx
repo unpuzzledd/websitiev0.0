@@ -37,7 +37,7 @@ export const TestAcademySetup: React.FC = () => {
       updateStep('user', 'in_progress', 'Checking user account...');
       
       // First, let's check if user exists
-      const { data: existingUser, error: userError } = await supabase
+      const { data: existingUser } = await supabase
         .from('users')
         .select('*')
         .eq('email', 'meetneerajv@gmail.com')
@@ -55,7 +55,7 @@ export const TestAcademySetup: React.FC = () => {
       // Step 2: Create or verify location
       updateStep('location', 'in_progress', 'Setting up Bangalore location...');
       
-      const { data: locations, error: locationError } = await supabase
+      const { data: locations } = await supabase
         .from('locations')
         .select('*')
         .eq('name', 'Bangalore')
@@ -107,7 +107,7 @@ export const TestAcademySetup: React.FC = () => {
       updateStep('skill', 'in_progress', 'Adding Chess skill...');
       
       // First check if Chess skill exists
-      const { data: chessSkill, error: skillError } = await supabase
+      const { data: chessSkill } = await supabase
         .from('skills')
         .select('*')
         .eq('name', 'Chess')
@@ -152,7 +152,7 @@ export const TestAcademySetup: React.FC = () => {
       // Step 5: Create test batch
       updateStep('batch', 'in_progress', 'Creating test batch...');
       
-      const { data: batch, error: batchError } = await supabase
+      const { error: batchError } = await supabase
         .from('batches')
         .insert({
           name: 'Beginner Chess Batch',
