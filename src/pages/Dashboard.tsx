@@ -1,12 +1,8 @@
 import { useAuth } from '../hooks/useAuth'
 
 const Dashboard = () => {
-  const { user, loading, signOut } = useAuth()
+  const { user, loading } = useAuth()
 
-  const handleSignOut = async () => {
-    await signOut()
-    // signOut already redirects to homepage, so no need for navigate
-  }
 
   const getRoleSpecificContent = () => {
     switch (user?.role) {
@@ -58,10 +54,13 @@ const Dashboard = () => {
                 src="/assets/unpuzzle-logo.png" 
                 alt="UNPUZZLE.CLUB Logo" 
                 className="h-24 w-auto"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  e.currentTarget.nextElementSibling.style.display = 'block';
-                }}
+                 onError={(e) => {
+                   e.currentTarget.style.display = 'none';
+                   const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                   if (nextElement) {
+                     nextElement.style.display = 'block';
+                   }
+                 }}
               />
               <h1 className="text-2xl font-bold text-gray-900 hidden">Unpuzzled</h1>
             </div>

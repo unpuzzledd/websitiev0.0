@@ -15,7 +15,10 @@ const DanceMusicClasses = () => {
             className="h-20 w-auto"
             onError={(e) => {
               e.currentTarget.style.display = 'none';
-              e.currentTarget.nextElementSibling.style.display = 'block';
+              const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+              if (nextElement) {
+                nextElement.style.display = 'block';
+              }
             }}
           />
           <h1 className="text-lg font-bold text-[#121714] font-lexend hidden">Unpuzzle Club</h1>

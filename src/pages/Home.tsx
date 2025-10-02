@@ -129,11 +129,14 @@ const Home = () => {
               src="/assets/unpuzzle-logo.png" 
               alt="UNPUZZLE.CLUB Logo" 
               className="h-24 w-auto"
-            onError={(e) => {
-              // Fallback to text if image fails to load
-              e.currentTarget.style.display = 'none';
-              e.currentTarget.nextElementSibling.style.display = 'block';
-            }}
+             onError={(e) => {
+               // Fallback to text if image fails to load
+               e.currentTarget.style.display = 'none';
+               const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+               if (nextElement) {
+                 nextElement.style.display = 'block';
+               }
+             }}
           />
           <h1 className="text-xl font-bold text-[#0D1C17] font-lexend hidden">Unpuzzle Club</h1>
         </div>
