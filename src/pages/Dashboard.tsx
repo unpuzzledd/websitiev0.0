@@ -52,20 +52,18 @@ const Dashboard = () => {
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900">Unpuzzled</h1>
-            </div>
-            <div className="flex items-center space-x-4">
-              <div className="text-sm text-gray-600">
-                {user?.full_name || user?.email}
-              </div>
-              <button
-                onClick={handleSignOut}
-                className="bg-red-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors"
-              >
-                Sign Out
-              </button>
+          <div className="flex justify-center items-center py-4">
+            <div className="flex items-center gap-3">
+              <img 
+                src="/assets/unpuzzle-logo.png" 
+                alt="UNPUZZLE.CLUB Logo" 
+                className="h-24 w-auto"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.nextElementSibling.style.display = 'block';
+                }}
+              />
+              <h1 className="text-2xl font-bold text-gray-900 hidden">Unpuzzled</h1>
             </div>
           </div>
         </div>

@@ -7,32 +7,23 @@ const ChessClasses = () => {
   return (
     <div className="min-h-screen bg-[#F7FCFA]">
       {/* Header */}
-      <header className="flex justify-between items-center px-10 py-3 border-b border-[#E5E8EB]">
+      <header className="flex justify-center items-center px-4 md:px-10 py-3 border-b border-[#E5E8EB]">
         <div className="flex items-center gap-4">
-          <div className="flex flex-col items-center">
-            <div className="w-4 h-4 relative">
-              <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fillRule="evenodd" clipRule="evenodd" d="M0.333333 0.833333H4.7778V5.2778H9.2222V9.7222H13.6667V14.1667H0.333333V0.833333V0.833333Z" fill="#121714"/>
-              </svg>
-            </div>
-          </div>
-          <h1 className="text-lg font-bold text-[#121714] font-lexend">Unpuzzle Club</h1>
-        </div>
-        
-        <div className="flex items-center gap-2">
-          <div className="flex h-12 min-w-[84px] max-w-[480px] px-4 justify-center items-center bg-[#009963] rounded-xl">
-            <div className="flex justify-center items-center gap-2">
-              <span className="text-sm font-bold text-[#F7FCFA] font-lexend">Sign In / Sign Up</span>
-              <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.3704 16.3351L18.8001 9.70467C19.2013 9.29094 18.9581 8.5 18.4297 8.5H5.5703C5.04189 8.5 4.79869 9.29094 5.1999 9.70467L11.6296 16.3351C11.8427 16.555 12.1573 16.5549 12.3704 16.3351Z" fill="white"/>
-              </svg>
-            </div>
-          </div>
+          <img 
+            src="/assets/unpuzzle-logo.png" 
+            alt="UNPUZZLE.CLUB Logo" 
+            className="h-20 w-auto"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.nextElementSibling.style.display = 'block';
+            }}
+          />
+          <h1 className="text-lg font-bold text-[#121714] font-lexend hidden">Unpuzzle Club</h1>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="py-5 px-40">
+      <main className="py-5 px-4 md:px-8 lg:px-40">
         <div className="max-w-[960px] mx-auto">
           {/* Back Button */}
           <Link to="/" className="flex items-center gap-3 mb-6">
@@ -43,28 +34,28 @@ const ChessClasses = () => {
           </Link>
 
           {/* Image Section */}
-          <div className="flex h-[342px] mb-0">
-            <div className="flex p-3 gap-4 flex-1">
+          <div className="flex flex-col md:flex-row h-auto md:h-[342px] mb-0">
+            <div className="flex flex-col md:flex-row p-3 gap-4 flex-1">
               <img 
                 src="https://api.builder.io/api/v1/image/assets/TEMP/23eca56508683f49227da4dcb147c323c66a9a18?width=1532" 
                 alt="Chess board with pieces" 
-                className="flex-1 h-[306px] min-h-[218px] rounded-xl object-cover"
+                className="flex-1 h-[250px] md:h-[306px] min-h-[218px] rounded-xl object-cover"
               />
-              <div className="flex w-[146px] flex-col gap-4">
+              <div className="flex flex-row md:flex-col w-full md:w-[146px] gap-4">
                 <img 
                   src="https://api.builder.io/api/v1/image/assets/TEMP/f00762ed8161ec9c3c4ba35c9f6a5208ce54f94e?width=292" 
                   alt="Chess pieces" 
-                  className="flex-1 rounded-xl object-cover"
+                  className="flex-1 h-[120px] md:h-auto rounded-xl object-cover"
                 />
                 <img 
                   src="https://api.builder.io/api/v1/image/assets/TEMP/161b0131316a9a25c239ec9ab4e75558cc4c9432?width=292" 
                   alt="Chess game" 
-                  className="flex-1 rounded-xl object-cover"
+                  className="flex-1 h-[120px] md:h-auto rounded-xl object-cover"
                 />
                 <img 
                   src="https://api.builder.io/api/v1/image/assets/TEMP/8ed3916fa5bb7a6afaaed49e72909214b4d82143?width=292" 
                   alt="Chess tournament" 
-                  className="flex-1 rounded-xl object-cover"
+                  className="flex-1 h-[120px] md:h-auto rounded-xl object-cover"
                 />
               </div>
             </div>
@@ -133,7 +124,7 @@ const ChessClasses = () => {
             </div>
           </div>
 
-          {/* Book a Call Button */}
+          {/* Contact Us Button */}
           <div className="flex p-3 justify-center mb-4">
             <a 
               href="https://wa.me/918660496605" 
@@ -141,7 +132,7 @@ const ChessClasses = () => {
               rel="noopener noreferrer"
               className="flex h-12 min-w-[84px] max-w-[480px] px-5 justify-center items-center bg-[#45A180] rounded-xl hover:bg-[#3d8b6f] transition-colors"
             >
-              <span className="text-base font-bold text-white font-lexend">Book a Call</span>
+              <span className="text-base font-bold text-white font-lexend">Contact Us</span>
             </a>
           </div>
 

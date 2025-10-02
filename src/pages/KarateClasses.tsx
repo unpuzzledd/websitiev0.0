@@ -7,21 +7,23 @@ const KarateClasses = () => {
   return (
     <div className="min-h-screen bg-[#F7FCFA]">
       {/* Header */}
-      <header className="flex justify-between items-center px-10 py-3 border-b border-[#E5E8EB]">
+      <header className="flex justify-center items-center px-4 md:px-10 py-3 border-b border-[#E5E8EB]">
         <div className="flex items-center gap-4">
-          <div className="flex flex-col items-center">
-            <div className="w-4 h-4 relative">
-              <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fillRule="evenodd" clipRule="evenodd" d="M0.333333 0.833333H4.7778V5.2778H9.2222V9.7222H13.6667V14.1667H0.333333V0.833333V0.833333Z" fill="#121714"/>
-              </svg>
-            </div>
-          </div>
-          <h1 className="text-lg font-bold text-[#121714] font-lexend">Unpuzzle Club</h1>
+          <img 
+            src="/assets/unpuzzle-logo.png" 
+            alt="UNPUZZLE.CLUB Logo" 
+            className="h-20 w-auto"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.nextElementSibling.style.display = 'block';
+            }}
+          />
+          <h1 className="text-lg font-bold text-[#121714] font-lexend hidden">Unpuzzle Club</h1>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="py-5 px-40">
+      <main className="py-5 px-4 md:px-8 lg:px-40">
         <div className="max-w-[960px] mx-auto">
           {/* Back Button */}
           <Link to="/" className="flex items-center gap-3 mb-6">
@@ -122,7 +124,7 @@ const KarateClasses = () => {
             </div>
           </div>
 
-          {/* Book a Call Button */}
+          {/* Contact Us Button */}
           <div className="flex p-3 justify-center mb-4">
             <a 
               href="https://wa.me/918660496605" 
@@ -130,7 +132,7 @@ const KarateClasses = () => {
               rel="noopener noreferrer"
               className="flex h-12 min-w-[84px] max-w-[480px] px-5 justify-center items-center bg-[#45A180] rounded-xl hover:bg-[#3d8b6f] transition-colors"
             >
-              <span className="text-base font-bold text-white font-lexend">Book a Call</span>
+              <span className="text-base font-bold text-white font-lexend">Contact Us</span>
             </a>
           </div>
 

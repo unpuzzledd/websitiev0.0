@@ -85,7 +85,7 @@ const WhyChooseUs = () => {
     const animate = () => {
       if (carouselRef.current) {
         const elapsed = Date.now() - startTimeRef.current
-        const speed = 0.02 // Adjust speed (lower = slower, higher = faster)
+        const speed = 0.005 // Adjust speed (lower = slower, higher = faster) - Reduced by 75% total
         const translateX = -(elapsed * speed) % (features.length * 20) // 20% per item
         
         carouselRef.current.style.transform = `translateX(${translateX}%)`

@@ -51,48 +51,71 @@ const Home = () => {
   const courses = [
     {
       id: 1,
-      title: 'Chess Strategies',
-      description: 'Chess tactics and strategies',
+      title: 'Chess Classes for Kids',
+      description: 'Basic to Pro',
       image: 'https://api.builder.io/api/v1/image/assets/TEMP/ebe220995921bbba1e54b898e4fe7c038a5c8f85?width=480'
     },
     {
       id: 2,
-      title: 'Karate Techniques',
+      title: 'Karate Classes for Kids',
       description: 'Karate for self-defense',
       image: 'https://api.builder.io/api/v1/image/assets/TEMP/d2fecf20374fedd37b28150269b0efbadb239748?width=480'
     },
     {
       id: 3,
-      title: 'Creativity of Paint - Art',
+      title: 'Arts Classes for Kids',
       description: 'Beginner to advanced Painting',
       image: 'https://api.builder.io/api/v1/image/assets/TEMP/84b405ee05f99cbdf7c861d5fe9163abd8deb4dc?width=480'
     },
     {
       id: 4,
-      title: 'Master Music Theory',
+      title: 'Dance & Music Classes',
       description: 'Music theory for all levels',
       image: 'https://api.builder.io/api/v1/image/assets/TEMP/82a0864f111c5c43b8ae85b86f1d126e9009c4dd?width=480'
     }
   ]
 
-  const successStories = [
+  const testimonials = [
     {
       id: 1,
-      title: 'From Beginner to Pro',
-      description: 'I started with no coding experience and now I\'m a software engineer.',
-      image: 'https://api.builder.io/api/v1/image/assets/TEMP/5866e70039c815297d4968d56e75d8d8fb07e4a8?width=603'
+      name: 'Manish Gupta',
+      reviews: 1,
+      rating: 5,
+      timeAgo: 'a month ago',
+      text: 'Divyansh as a coach.Helping my children in chess improvement.He is very Humble and good at teaching...❤️'
     },
     {
       id: 2,
-      title: 'Career Transformation',
-      description: 'SkillShare Connect helped me switch careers and pursue my passion.',
-      image: 'https://api.builder.io/api/v1/image/assets/TEMP/dcba7327ff0c155ef5c52f5c7ddd3f1a8170d53c?width=603'
+      name: 'Shivi Sahu',
+      reviews: 1,
+      rating: 5,
+      timeAgo: 'a month ago',
+      text: 'Best academy for beginners and someone who is looking to pursue his career in chess. Coach Divyanshu has helped me to clear my concepts and I am doing better each day.'
     },
     {
       id: 3,
-      title: 'Passion to Profession',
-      description: 'I turned my hobby into a successful business thanks to SkillShare Connect.',
-      image: 'https://api.builder.io/api/v1/image/assets/TEMP/207f51bd1a6f8bf6f3bd8ebe26326e7448c482a0?width=603'
+      name: 'rajeev singh',
+      reviews: 25,
+      isLocalGuide: true,
+      rating: 5,
+      timeAgo: '7 months ago',
+      text: 'My daughter, Anaya, has had an amazing learning experience at Vishal Chess Academy. Under the guidance of Coach Mahesh, she has improved significantly in her gameplay, strategy, and confidence. The structured training, personalized attention, and focus on competitive preparation have helped her achieve a silver medal in a recent tournament! The academy provides a great learning environment for young chess enthusiasts. Highly recommend it to anyone looking for quality chess coaching!'
+    },
+    {
+      id: 4,
+      name: 'humera nazneen shaik',
+      reviews: 3,
+      rating: 5,
+      timeAgo: '3 months ago',
+      text: 'Academy is well-suited for those new to chess or looking to improve their skills.My friend\'s child is learning here in this academy.Explaining concepts in a simple and understandable manner. Coaches are well experienced and expertise.'
+    },
+    {
+      id: 5,
+      name: 'Rahul U S',
+      reviews: 7,
+      rating: 5,
+      timeAgo: '2 months ago',
+      text: 'My son had a very good experience at Vishal Chess Academy. They have very friendly and encouraging coaches. Recommended.'
     }
   ]
 
@@ -100,26 +123,19 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-[#F7FCFA]">
       {/* Header */}
-      <header className="flex justify-between items-center px-10 py-6 border-b border-[#E5E8EB]">
-        <div className="flex items-center gap-8">
-          <div className="flex items-center gap-4">
-            <div className="flex flex-col items-center">
-              <div className="w-6 h-6 relative">
-                <svg width="20" height="20" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M2.6087 1.3088C3.57343 1.53913 4.74147 1.6739 6 1.6739C7.25853 1.6739 8.42657 1.53913 9.3913 1.3088C10.3048 1.09073 11.3322 0.5777 11.7854 0.2216L6.28287 9.04637C6.15237 9.25567 5.84763 9.25567 5.71713 9.04637L0.21458 0.2216C0.66777 0.5777 1.6952 1.09073 2.6087 1.3088Z" fill="#0D1C17"/>
-                </svg>
-                <svg width="20" height="20" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute top-0 left-0">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M12.3327 3.57867C12.3315 3.58457 12.3292 3.59483 12.3249 3.6098C12.3145 3.64663 12.2983 3.69137 12.2782 3.73917C12.2723 3.75323 12.2663 3.7669 12.2604 3.77993C11.8368 4.07043 10.9929 4.47977 10.2365 4.66037C9.32917 4.877 8.21377 5.00723 7 5.00723C5.78623 5.00723 4.67083 4.877 3.7635 4.66037C3.0004 4.4782 2.14835 4.06323 1.72846 3.77227C1.72461 3.76417 1.72072 3.75567 1.71684 3.74693C1.69973 3.7083 1.68574 3.67047 1.67659 3.637C1.66785 3.60507 1.6668 3.5889 1.66668 3.58707C1.66667 3.5869 1.66668 3.587 1.66668 3.58707C1.66668 3.57863 1.67013 3.47443 1.89495 3.28953C2.11515 3.10847 2.47407 2.91563 2.97637 2.74092C3.97473 2.39366 5.3973 2.16667 7 2.16667C8.6027 2.16667 10.0253 2.39366 11.0236 2.74092C11.5259 2.91563 11.8848 3.10847 12.105 3.28953C12.3002 3.45003 12.3286 3.54963 12.3327 3.57867ZM0.650593 4.57707L6.15143 13.3991C6.54293 14.027 7.45707 14.027 7.84857 13.3991L13.3511 4.57433C13.357 4.56493 13.3626 4.5554 13.368 4.5457L12.7854 4.2216C13.368 4.5457 13.3679 4.5458 13.368 4.5457L13.3684 4.545L13.3688 4.54417L13.37 4.54203L13.3733 4.53607C13.3759 4.53133 13.3792 4.52513 13.3832 4.51757C13.3913 4.5025 13.4021 4.48183 13.4147 4.4567C13.4397 4.40693 13.4732 4.337 13.5072 4.2561C13.5634 4.12263 13.6667 3.8563 13.6667 3.58697C13.6667 3.0191 13.3343 2.57418 12.9519 2.2597C12.5649 1.94142 12.0451 1.68454 11.4617 1.48159C10.2885 1.07352 8.711 0.833333 7 0.833333C5.289 0.833333 3.71153 1.07352 2.53833 1.48159C1.95488 1.68454 1.4351 1.94143 1.04806 2.2597C0.66565 2.57418 0.33333 3.0191 0.33333 3.58697C0.33333 3.87583 0.43088 4.13593 0.497737 4.2869C0.534583 4.37007 0.57116 4.43987 0.598957 4.48963C0.612993 4.5148 0.625157 4.5355 0.6345 4.55097C0.63918 4.55873 0.64318 4.56523 0.646387 4.57037L0.648873 4.57433L0.650593 4.57707ZM10.9956 5.832L7 12.24L3.00437 5.832C3.15537 5.8797 3.30597 5.92193 3.4539 5.95727C4.47603 6.2013 5.6967 6.34057 7 6.34057C8.3033 6.34057 9.52397 6.2013 10.5461 5.95727C10.694 5.92193 10.8446 5.8797 10.9956 5.832Z" fill="#0D1C17"/>
-                </svg>
-              </div>
-            </div>
-            <h1 className="text-xl font-bold text-[#0D1C17] font-lexend">Unpuzzle Club</h1>
-          </div>
-          
-        </div>
-        
-<div className="flex items-center gap-4">
-          {/* All navigation and auth buttons hidden as requested */}
+      <header className="flex justify-center items-center px-10 py-6 border-b border-[#E5E8EB]">
+        <div className="flex items-center gap-4">
+            <img 
+              src="/assets/unpuzzle-logo.png" 
+              alt="UNPUZZLE.CLUB Logo" 
+              className="h-24 w-auto"
+            onError={(e) => {
+              // Fallback to text if image fails to load
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.nextElementSibling.style.display = 'block';
+            }}
+          />
+          <h1 className="text-xl font-bold text-[#0D1C17] font-lexend hidden">Unpuzzle Club</h1>
         </div>
       </header>
 
@@ -268,28 +284,28 @@ const Home = () => {
                             to="/chess-classes"
                             className="flex px-3 md:px-4 py-2 justify-center items-center align-self-stretch rounded-[10px] bg-[#009963] hover:bg-[#007a4d] transition-colors cursor-pointer min-h-[44px]"
                           >
-                            <span className="text-[#F7FCFA] font-lexend text-sm font-normal leading-[21px]">Learn More</span>
+                            <span className="text-[#F7FCFA] font-lexend text-sm font-normal leading-[21px]">Get More Info</span>
                           </Link>
                         ) : course.id === 2 ? (
                           <Link
                             to="/karate-classes"
                             className="flex px-3 md:px-4 py-2 justify-center items-center align-self-stretch rounded-[10px] bg-[#009963] hover:bg-[#007a4d] transition-colors cursor-pointer min-h-[44px]"
                           >
-                            <span className="text-[#F7FCFA] font-lexend text-sm font-normal leading-[21px]">Learn More</span>
+                            <span className="text-[#F7FCFA] font-lexend text-sm font-normal leading-[21px]">Get More Info</span>
                           </Link>
                         ) : course.id === 3 ? (
                           <Link
                             to="/arts-classes"
                             className="flex px-3 md:px-4 py-2 justify-center items-center align-self-stretch rounded-[10px] bg-[#009963] hover:bg-[#007a4d] transition-colors cursor-pointer min-h-[44px]"
                           >
-                            <span className="text-[#F7FCFA] font-lexend text-sm font-normal leading-[21px]">Learn More</span>
+                            <span className="text-[#F7FCFA] font-lexend text-sm font-normal leading-[21px]">Get More Info</span>
                           </Link>
                         ) : course.id === 4 ? (
                           <Link
                             to="/dance-music-classes"
                             className="flex px-3 md:px-4 py-2 justify-center items-center align-self-stretch rounded-[10px] bg-[#009963] hover:bg-[#007a4d] transition-colors cursor-pointer min-h-[44px]"
                           >
-                            <span className="text-[#F7FCFA] font-lexend text-sm font-normal leading-[21px]">Learn More</span>
+                            <span className="text-[#F7FCFA] font-lexend text-sm font-normal leading-[21px]">Get More Info</span>
                           </Link>
                         ) : (
                           <a
@@ -309,8 +325,8 @@ const Home = () => {
             </div>
           </section>
 
-          {/* Location Covered */}
-          <section className="mb-8 md:mb-12">
+          {/* Location Covered - HIDDEN */}
+          {/* <section className="mb-8 md:mb-12">
             <h3 className="text-lg md:text-[22px] font-bold text-[#0D1C17] mb-4 px-2 md:px-4 font-lexend">Location Covered</h3>
             <div className="px-2 md:px-4">
               <div className="flex justify-between items-start rounded-xl">
@@ -333,24 +349,49 @@ const Home = () => {
                 />
               </div>
             </div>
-          </section>
+          </section> */}
 
-          {/* Student Success Stories */}
+          {/* Testimonials */}
           <section className="mb-8 md:mb-12">
-            <h3 className="text-lg md:text-[22px] font-bold text-[#0D1C17] mb-4 px-2 md:px-4 font-lexend">Student Success Stories</h3>
+            <h3 className="text-lg md:text-[22px] font-bold text-[#0D1C17] mb-4 px-2 md:px-4 font-lexend">Testimonials</h3>
             <div className="px-2 md:px-4">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-3">
-                {successStories.map((story) => (
-                  <div key={story.id} className="flex flex-col gap-4">
-                    <img 
-                      src={story.image} 
-                      alt={story.title}
-                      className="h-[200px] md:h-[301px] w-full rounded-xl object-cover"
-                    />
-                    <div>
-                      <h4 className="text-sm md:text-base font-medium text-[#0D1C17] font-lexend">{story.title}</h4>
-                      <p className="text-xs md:text-sm text-[#45A180] font-lexend">{story.description}</p>
+                {testimonials.map((testimonial) => (
+                  <div key={testimonial.id} className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                    <div className="flex items-center gap-3 mb-3">
+                      <img 
+                        src={`https://ui-avatars.com/api/?name=${encodeURIComponent(testimonial.name)}&background=random&color=fff&size=32&rounded=true`}
+                        alt={testimonial.name}
+                        className="w-8 h-8 rounded-full object-cover"
+                      />
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2">
+                          <h4 className="text-sm font-medium text-[#0D1C17] font-lexend">{testimonial.name}</h4>
+                          {testimonial.isLocalGuide && (
+                            <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full font-medium">
+                              Local Guide
+                            </span>
+                          )}
+                        </div>
+                        <div className="flex items-center gap-1 text-xs text-gray-500">
+                          <span>{testimonial.reviews} review{testimonial.reviews !== 1 ? 's' : ''}</span>
+                          <span>•</span>
+                          <span>{testimonial.timeAgo}</span>
+                        </div>
+                      </div>
                     </div>
+                    
+                    <div className="flex items-center gap-1 mb-3">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                    </div>
+                    
+                    <p className="text-sm text-gray-700 font-lexend leading-relaxed">
+                      {testimonial.text}
+                    </p>
                   </div>
                 ))}
               </div>
